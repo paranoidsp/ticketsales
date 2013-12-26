@@ -55,7 +55,7 @@ else echo "Email id already registered";
               <td> Department:</td> 
               <td> <select name="dept" onchange="change()">
 <?php
-	$dept_list = array("AE", "AM", "BT", "CE", "CH", "CS", "DoMS", "ED", "EE", "HS", "MA", "ME", "MM", "NA", "PH");
+	$dept_list = array("AE", "AM", "BT", "CE", "CH", "CS","CY", "DoMS", "ED", "EE", "HS", "MA", "ME", "MM", "NA", "PH");
 	foreach($dept_list as $dept_item)
 	{
 		echo '<option value="'.$dept_item.'">'.$dept_item.'</option>';

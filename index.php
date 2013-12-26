@@ -39,7 +39,7 @@ echo "Username and password do not match";
 	border: 3px solid #B45252;
 	}
 	#login_form h3,table,tbody,tr,td,input{
-		//position: absolute;
+		/*position: absolute;*/
 	}
 	#login_form h3{
 		margin-top:0;
@@ -50,7 +50,7 @@ echo "Username and password do not match";
     	<img src="images/IMG_3253.png" width="100%" height="100%" />
     </div>
     <div id="page_container" style="position:absolute;width:100%;height:100%;">
-        <div id="login_form" style="position:relative;top:50%;width:300px;height:200px;margin:0 auto;">
+        <div id="login_form" style="position:relative;top:50%;width:300px;height:200px;margin: -150px;left: 50%;">
         <form method="post" action="index.php" align="center"> 
           <h3>Login Form</h3> 
           <table style="display: table;" class=" htmtableborders" align="center"> 
@@ -65,7 +65,7 @@ echo "Username and password do not match";
               </tr> 
             </tbody> 
           </table> 
-          <div align="center" style="margin-top:10px;height:20px;"><div style="position:absolute;float:left;margin-left:0px"><input type="submit" value="Login" name="submit" /></div> <div style="position:absolute; margin-left:60px;"><input type="reset" /></div></div>
+          <div align="center" style="margin-top:10px;height:20px;"><div style="flo0at:left;margin-left:30px;width:100px;"><input type="submit" value="Login" name="submit" /></div> <div style="width:100px;margin-left:30px;margin-top:20px;"><input type="reset" /></div></div>
           <div align="center" style="margin-top:20px;">Don't have an account?&nbsp; Register <a href="register.php">here</a>
           </div>
         </form>

@@ -43,7 +43,6 @@ table{
 	left: 192px;	
 }
 .image_holder{
-	position: absolute;
 	top: 25px;
 	left: 10px;	
 }
@@ -125,8 +124,8 @@ else echo '
 Non-Discounted
 <form method="POST" action="update.php"><select name="edmtype" onChange="change()">
 <option value=1>Gallery (Rs. 350)</option>
-<option value=2>Bowl (Rs. 600)</option>
-<option value=3>Exclusive fan pass (Rs. 1000)</option></select>x
+<option value=2>Bowl (Rs. 500)</option>
+<option value=3>Exclusive fan pass (Rs. 750)</option></select>x
 <select name="edmtypen" onChange="change()">
 <option value=1>1</option>
 <option value=2>2</option>
@@ -250,7 +249,7 @@ Non-Discounted<form method="POST" action="update.php">
 
 </div>
 
-<div style="position: absolute; top: 1108px; left: 150px; background-color: transparent;">
+<div style="display:none;position: absolute; top: 1108px; left: 150px; background-color: transparent;">
 <b>Payment Method:</b><form method="POST" action="update.php"><select name="methtype" onChange="change()">
 <option value="Deduct from salary">Deduct From salary</option>
 <option value="Pay by cash">Pay by cash</option></select><input style="margin-left:30px" type="submit" name="meth" value="Update Method"></form>
@@ -268,21 +267,21 @@ if($row['choreo_g']>0) echo "<br>Gallery :".$row['choreo_g']." x 200 = Rs.".$row
 if($row['choreo_c']>0) echo "<br>Chair :".$row['choreo_c']." x 250 = Rs.".$row['choreo_c']*250;
 echo "<br><b><u>Rock Show:</u></b>";
 echo "<br><b>Discounted:</b>";
-if($row['rock_g_d']>0) echo "<br>Gallery :".$row['rock_g_d']." x 250 = Rs.".$row['rock_g_d']*200;
+if($row['rock_g_d']>0) echo "<br>Gallery :".$row['rock_g_d']." x 250 = Rs.".$row['rock_g_d']*250;
 if($row['rock_b_d']>0) echo "<br>Bowl :".$row['rock_b_d']." x 400 = Rs.".$row['rock_b_d']*400;
 echo "<br><b>Non-Discounted:</b>";
-if($row['rock_g']>0) echo "<br>Gallery :".$row['rock_g']." x 350 = Rs.".$row['rock_g']*400;
+if($row['rock_g']>0) echo "<br>Gallery :".$row['rock_g']." x 350 = Rs.".$row['rock_g']*350;
 if($row['rock_b']>0) echo "<br>Bowl :".$row['rock_b']." x 600 = Rs.".$row['rock_b']*600;
 if($row['rock_e']>0) echo "<br>Exclusive Fans :".$row['rock_e']." x 1000 = Rs.".$row['rock_e']*1000;
 echo "<br><b><u>EDM Night(Sunburn Campus):</u></b>";
 echo "<br><b>Discounted:</b>";
-if($row['edm_g_d']>0) echo "<br>Gallery :".$row['edm_g_d']." x 250 = Rs.".$row['edm_g_d']*200;
+if($row['edm_g_d']>0) echo "<br>Gallery :".$row['edm_g_d']." x 250 = Rs.".$row['edm_g_d']*250;
 if($row['edm_b_d']>0) echo "<br>Bowl :".$row['edm_b_d']." x 400 = Rs.".$row['edm_b_d']*400;
 echo "<br><b>Non-Discounted:</b>";
-if($row['edm_g']>0) echo "<br>Gallery :".$row['edm_g']." x 350 = Rs.".$row['edm_g']*400;
-if($row['edm_b']>0) echo "<br>Bowl :".$row['edm_b']." x 600 = Rs.".$row['edm_b']*600;
-if($row['edm_e']>0) echo "<br>Exclusive Fans :".$row['edm_e']." x 1000 = Rs.".$row['edm_e']*1000;
-echo "<br><b><u>SEL:</u></b>";
+if($row['edm_g']>0) echo "<br>Gallery :".$row['edm_g']." x 350 = Rs.".$row['edm_g']*350;
+if($row['edm_b']>0) echo "<br>Bowl :".$row['edm_b']." x 500 = Rs.".$row['edm_b']*500;
+if($row['edm_e']>0) echo "<br>Exclusive Fans :".$row['edm_e']." x 750 = Rs.".$row['edm_e']*750;
+echo "<br><b><u>Popular Night:</u></b>";
 echo "<br><b>Discounted:</b>";
 if($row['sel_g_d']>0) echo "<br>Gallery :".$row['sel_g_d']." x 350 = Rs.".$row['sel_g_d']*350;
 if($row['sel_s_d']>0) echo "<br>Silver :".$row['sel_s_d']." x 600 = Rs.".$row['sel_s_d']*600;
@@ -292,7 +291,7 @@ if($row['sel_g']>0) echo "<br>Gallery :".$row['sel_g']." x 600 = Rs.".$row['sel_
 if($row['sel_s']>0) echo "<br>Silver :".$row['sel_s']." x 800 = Rs.".$row['sel_s']*800;
 if($row['sel_gld']>0) echo "<br>Gold :".$row['sel_gld']." x 1000 = Rs.".$row['sel_gld']*1000;
 if($row['sel_p']>0) echo "<br>Platinum :".$row['sel_p']." x 1500 = Rs.".$row['sel_p']*1500;
-echo "<br><br><b>Total amount = </b> Rs. ".(($row['sel_p']*1500)+($row['sel_gld']*1000)+($row['sel_s']*800)+($row['sel_g']*600)+($row['sel_gld_d']*800)+($row['sel_s_d']*600)+($row['sel_g_d']*350)+($row['rock_b_d']*400)+($row['rock_g_d']*200)+($row['rock_e']*1000)+($row['rock_b']*600)+($row['rock_g']*400)+($row['choreo_c']*250)+($row['choreo_g']*200));
+echo "<br><br><b>Total amount = </b> Rs. ".(($row['sel_p']*1500)+($row['sel_gld']*1000)+($row['sel_s']*800)+($row['sel_g']*600)+($row['sel_gld_d']*800)+($row['sel_s_d']*600)+($row['sel_g_d']*350)+($row['edm_b_d']*400)+($row['edm_g_d']*250)+($row['edm_e']*750)+($row['edm_b']*500)+($row['edm_g']*350)+($row['rock']*400)+($row['rock']*200)+($row['rock']*1000)+($row['rock']*600)+($row['rock']*400)+($row['choreo_c']*250)+($row['choreo_g']*200));
 echo "<br><br><b>Method of payment:</b> ".$row['paytype'];
 ?>
 <br><form method="POST" action="update.php"><input type="submit" value="Reset Cart" name="resetcart"></form>
